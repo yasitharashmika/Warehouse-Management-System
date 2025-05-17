@@ -7,46 +7,7 @@
     <title>Staff Dashboard | Vehicle Parts WMS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-        }
-        
-        body {
-            background-color: #f8f9fa;
-            min-height: 100vh;
-        }
-        
-        .sidebar {
-            background-color: var(--primary-color);
-            min-height: 100vh;
-            color: white;
-            width: 250px;
-            position: fixed;
-        }
-        
-        .main-content {
-            margin-left: 250px;
-            padding: 20px;
-        }
-        
-        .stat-card {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-        }
-        
-        .alert-badge {
-            background: var(--accent-color);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.9em;
-        }
-    </style>
+   
 </head>
 <body>
     <!-- Left Sidebar -->
