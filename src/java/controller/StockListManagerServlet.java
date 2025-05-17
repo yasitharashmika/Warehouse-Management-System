@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "StockListManagerServlet", urlPatterns = {"/StockListManagerServlet"})
+Create
 public class StockListManagerServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
