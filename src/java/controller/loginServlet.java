@@ -6,7 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpSession;
 
 import model.User;
 import dao.UserDAO;
@@ -16,24 +16,29 @@ public class loginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+        throws ServletException, IOException {
 
-        // Create a User object and populate it with credentials
-        User user = new User();
-        user.setUsername(request.getParameter("username"));
-        user.setPassword(request.getParameter("password"));
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
 
-        // Create DAO and validate the user
         UserDAO userDAO = new UserDAO();
-        boolean status = userDAO.validateUser(user);
+        String role = userDAO.getUserRole(username, password);
 
-        // Route based on login success
-        if (status) {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("manager/dashboard_manager.jsp");
-            dispatcher.forward(request, response);
+        if (role != null) {
+            // ✅ Set session attribute
+            HttpSession session = request.getSession();
+            session.setAttribute("username", username);
+            session.setAttribute("role", role);
+
+            if ("manager".equalsIgnoreCase(role)) {
+                response.sendRedirect("ManagerDashboardServlet");
+            } else if ("staff".equalsIgnoreCase(role)) {
+                response.sendRedirect("staff/dashboard_staff.jsp");
+            } else {
+                response.sendRedirect("login.jsp?error=invalid_role");
+            }
         } else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
-            dispatcher.forward(request, response);
+            response.sendRedirect("login.jsp?error=1");
         }
     }
 }
