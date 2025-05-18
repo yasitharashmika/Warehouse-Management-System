@@ -42,7 +42,11 @@
     <div class="sidebar p-3">
         <h4 class="mb-4">WMS Manager</h4>
         <nav class="nav flex-column">
+
             <a class="nav-link" href="${pageContext.request.contextPath}/StaffDashboardServlet">
+
+            <a class="nav-link" href="dashboard_manager.jsp">
+
                 <i class="fas fa-tachometer-alt me-2"></i>Dashboard
             </a>
             <div class="sidebar-section">ACTIONS</div>
