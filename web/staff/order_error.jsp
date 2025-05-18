@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Order Success | Vehicle Parts WMS</title>
+    <title>Order Error | Vehicle Parts WMS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -31,7 +31,7 @@
             padding: 20px;
         }
         
-        .success-card {
+        .error-card {
             max-width: 600px;
             margin: 2rem auto;
         }
@@ -49,7 +49,7 @@
             <a class="nav-link" href="create_order.jsp">
                 <i class="fas fa-cart-plus me-2"></i>New Order
             </a>
-            <a class="nav-link" href="${pageContext.request.contextPath}/OrderListServlet">
+            <a class="nav-link" href="order_list_manager.jsp">
                 <i class="fas fa-list-ol me-2"></i>View Orders
             </a>
         </nav>
@@ -59,7 +59,7 @@
     <div class="main-content">
         <!-- Header -->
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h3><i class="fas fa-check-circle me-2"></i>Order Success</h3>
+            <h3><i class="fas fa-exclamation-triangle me-2"></i>Order Error</h3>
             <div class="d-flex align-items-center">
                 <span class="me-3 text-muted">
                     <i class="fas fa-user-circle me-2"></i>
@@ -71,18 +71,18 @@
             </div>
         </div>
 
-        <!-- Success Content -->
-        <div class="success-card">
-            <div class="alert alert-success">
-                <h4 class="alert-heading"><i class="fas fa-check-circle me-2"></i>Order Placed Successfully!</h4>
-                <p class="mt-3">Your order has been processed and recorded in the system.</p>
+        <!-- Error Content -->
+        <div class="error-card">
+            <div class="alert alert-danger">
+                <h4 class="alert-heading"><i class="fas fa-times-circle me-2"></i>Order Processing Error</h4>
+                <p class="mt-3">${not empty errorMessage ? errorMessage : 'Something went wrong while processing your order'}</p>
                 <hr>
                 <div class="d-flex justify-content-center gap-3 mt-4">
-                    <a href="create_order.jsp" class="btn btn-outline-success">
-                        <i class="fas fa-cart-plus me-2"></i>New Order
+                    <a href="create_order.jsp" class="btn btn-outline-danger">
+                        <i class="fas fa-redo me-2"></i>Try Again
                     </a>
-                    <a href="dashboard_staff.jsp" class="btn btn-outline-primary">
-                        <i class="fas fa-home me-2"></i>Dashboard
+                    <a href="dashboard_manager.jsp" class="btn btn-outline-secondary">
+                        <i class="fas fa-home me-2"></i>Return to Dashboard
                     </a>
                 </div>
             </div>

@@ -10,6 +10,8 @@ import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.ResultSet;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class OrderDAO {
 
@@ -132,6 +134,26 @@ public class OrderDAO {
     }
     
     return income;
+}
+
+        public Map<String, Double> getDailyIncomeLast7Days() throws SQLException {
+    Map<String, Double> incomeMap = new LinkedHashMap<>();
+    String sql = "SELECT DATE(order_date) as date, SUM(total_price) as total " +
+                 "FROM orders WHERE order_date >= CURDATE() - INTERVAL 6 DAY " +
+                 "GROUP BY DATE(order_date) ORDER BY date";
+
+    try (Connection con = dbConnect.getConnection();
+         PreparedStatement ps = con.prepareStatement(sql);
+         ResultSet rs = ps.executeQuery()) {
+
+        while (rs.next()) {
+            String date = rs.getString("date");
+            double total = rs.getDouble("total");
+            incomeMap.put(date, total);
+        }
+    }
+
+    return incomeMap;
 }
 
     

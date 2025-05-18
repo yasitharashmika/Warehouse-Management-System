@@ -14,8 +14,9 @@ public class Order {
     private String shippingAddress;
     private double itemPrice;
     private String status;
+    private double total;
 
-    // Existing getters and setters
+    // Getters and setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
@@ -34,7 +35,6 @@ public class Order {
     public String getCustomerName() { return customerName; }
     public void setCustomerName(String customerName) { this.customerName = customerName; }
 
-    // New getters and setters
     public String getShippingAddress() { return shippingAddress; }
     public void setShippingAddress(String shippingAddress) { this.shippingAddress = shippingAddress; }
 
@@ -43,4 +43,18 @@ public class Order {
 
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
+
+    /**
+     * @return the total
+     */
+    public double getTotal() {
+        return total;
+    }
+
+    /**
+     * @param total the total to set
+     */
+    public void setTotal(double total) {
+        this.total = total;
+    }
 }
