@@ -33,7 +33,7 @@ public class loginServlet extends HttpServlet {
             if ("manager".equalsIgnoreCase(role)) {
                 response.sendRedirect("ManagerDashboardServlet");
             } else if ("staff".equalsIgnoreCase(role)) {
-                response.sendRedirect("staff/dashboard_staff.jsp");
+                response.sendRedirect("StaffDashboardServlet");
             } else {
                 response.sendRedirect("login.jsp?error=invalid_role");
             }

@@ -150,9 +150,8 @@
                 </div>
                 
                 <div class="mt-3 text-center">
-                    <a href="#forgot-password" class="forgot-password text-decoration-none">
-                        Forgot Password?
-                    </a>
+                    
+                    
                 </div>
             </form>
         </div>
