@@ -11,7 +11,13 @@ import java.util.List;
 
 @WebServlet(name = "StockListManagerServlet", urlPatterns = {"/StockListManagerServlet"})
 public class StockListManagerServlet extends HttpServlet {
+
     @Override
+
+
+    @Override
+
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 

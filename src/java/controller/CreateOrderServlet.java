@@ -36,4 +36,3 @@ public class CreateOrderServlet extends HttpServlet {
             response.sendRedirect("staff/order_error.jsp");
         }
     }
-}

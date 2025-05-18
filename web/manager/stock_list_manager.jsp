@@ -8,6 +8,9 @@
     <title>Stock List | Vehicle Parts WMS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -43,12 +46,25 @@
         }
     </style>
 </head>
+
+
+</head>
+
+
 <body>
 <!-- Sidebar -->
 <div class="sidebar p-3">
     <h4 class="mb-4">WMS Manager</h4>
     <nav class="nav flex-column">
+
         <a class="nav-link text-white" href="${pageContext.request.contextPath}/ManagerDashboardServlet">
+
+
+        <a class="nav-link text-white" href="${pageContext.request.contextPath}/ManagerDashboardServlet">
+
+        <a class="nav-link text-white" href="manager/dashboard_manager.jsp">
+
+
             <i class="fas fa-tachometer-alt me-2"></i> Dashboard
         </a>
        
