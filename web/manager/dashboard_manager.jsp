@@ -163,11 +163,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h5 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i>Critical Stock Items</h5>
-
                         <a href="StockListManagerServlet" class="btn btn-sm btn-primary">
-
-                        <a href="OrderListServlet" class="btn btn-sm btn-primary">
-
                             <i class="fas fa-eye me-2"></i>View All
                         </a>
                     </div>
